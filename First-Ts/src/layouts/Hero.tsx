@@ -9,7 +9,7 @@ function Hero() {
   return (
     <div className="grid grid-cols-[auto,1fr] flex-grow overflow-auto">
       <aside>Sidebar</aside>
-      <div className="px-8">
+      <div className="px-8  overflow-x-hidden  ">
         <div className="sticky top-0 bg-white z-10 pb-4">
           <CategoryPills categories={categories} />
         </div>
