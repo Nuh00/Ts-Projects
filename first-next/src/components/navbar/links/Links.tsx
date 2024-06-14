@@ -1,10 +1,9 @@
 "use client";
 
-
 import Link from "next/link";
 import React from "react";
 import { useState } from "react";
-
+import { usePathname } from "next/navigation";
 
 const links = [
   {
@@ -26,8 +25,10 @@ const links = [
 ];
 
 function Links() {
-    const [activeLink, setActiveLink] = useState(links[0].title);
+  const pathname = usePathname();
 
+  const isAdmin = true;
+  const session = true;
 
   return (
     <div className="flex gap-2">
@@ -35,8 +36,11 @@ function Links() {
         <Link
           href={link.path}
           key={link.title}
-          className={`px-3 py-1 rounded-2xl transition duration-300 ease-in-out ${activeLink === link.title ? "bg-white text-black": "hover:bg-white hover:text-black"}`}
-          onClick={() => setActiveLink(link.title)}
+          className={`px-3 py-1  rounded transition duration-300 ease-in-out ${
+            pathname === link.path
+              ? "bg-white text-black"
+              : "hover:bg-white hover:text-black"
+          }`}
         >
           {link.title}
         </Link>

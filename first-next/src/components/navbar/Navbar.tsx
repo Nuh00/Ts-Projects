@@ -1,5 +1,7 @@
 import React from "react";
 import Links from "@/components/navbar/links/Links";
+import CustonLinks from "../CustonLinks";
+
 
 
 function Navbar() {
@@ -10,7 +12,9 @@ function Navbar() {
       </div>
 
       <div>
-        <Links />
+        <CustonLinks href="/" size = "md" className="rounded-2xl">Home</CustonLinks>
+        <CustonLinks href="/login" size="sm" intent="danger">Login</CustonLinks>
+
       </div>
     </div>
   );
