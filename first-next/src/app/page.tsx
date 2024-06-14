@@ -1,8 +1,7 @@
-
 export default function Home() {
   return (
     <main className="">
-      I wonder can you see me
+      <div className="bg-green-600 h-full">I wonder can you see me</div>
     </main>
   );
 }
