@@ -14,14 +14,15 @@ const linkStyles = cva(["transition duration-300 ease-in-out"], {
     intent: {
       danger: ["bg-red-500", "text-white", "hover:bg-red-300"],
       sky: ["bg-blue-500", "text-white", "hover:bg-gray-300"],
-      primary: ["bg-white", "text-black", "hover:bg-gray-300"],
+      primary: ["text-white"],
       orange: ["bg-orange-500", "text-white", "hover:bg-gray-300"],
     },
 
     size: {
-      default: ["px-2", "py-1", "rounded-sm"],
+      default: ["px-3", "py-2", "rounded-sm"],
       sm: ["px-2", "rounded-sm"],
       md: ["px-3", "py-2", "rounded-sm"],
+      mf: ["px-3", "py-2", "rounded-2xl"],
       lg: ["px-4", "py-3", "rounded-sm"],
     },
   },
@@ -33,7 +34,7 @@ type LinkProps = VariantProps<typeof linkStyles> &
     href: string;
   };
 
-function CustonLinks({
+function CustomLinks({
   href,
   children,
   intent,
@@ -49,4 +50,4 @@ function CustonLinks({
   );
 }
 
-export default CustonLinks;
+export default CustomLinks;
