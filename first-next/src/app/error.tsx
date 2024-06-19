@@ -5,7 +5,7 @@ import React from 'react'
 function error() {
   return (
     <div>
-      Error page
+      You messed up
     </div>
   )
 }

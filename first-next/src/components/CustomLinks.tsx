@@ -19,7 +19,7 @@ const linkStyles = cva(["transition duration-300 ease-in-out"], {
     },
 
     size: {
-      default: ["px-3", "py-2", "rounded-sm"],
+      default: ["px-3", "rounded-sm", "text-xs", " py-3"],
       sm: ["px-2", "rounded-sm"],
       md: ["px-3", "py-2", "rounded-sm"],
       mf: ["px-3", "py-2", "rounded-2xl"],

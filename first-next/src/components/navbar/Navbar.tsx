@@ -93,8 +93,8 @@ function Navbar() {
       <div
         className={
           clicked
-            ? "flex flex-col justify-center gap-20 absolute top-0 right-0 w-full h-screen border-r-gray-300 bg-[#000300] transition-all duration-500 ease-in-out"
-            : "absolute right-[-100%] transition-all duration-500 "
+            ? "flex flex-col justify-center gap-20 fixed top-0 right-0 w-full h-screen border-r-gray-300 bg-[#000300] transition-all duration-500 ease-in-out"
+            : "fixed right-[-100%] transition-all duration-500 "
         }
       >
         <>
