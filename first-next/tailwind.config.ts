@@ -19,6 +19,7 @@ const config: Config = {
         "button-blue": "#4380F8",
         "text-blue": "#4380F8",
         "footer-gray": "#777781",
+        "darker-gray": "#33314C",
       },
     },
   },
