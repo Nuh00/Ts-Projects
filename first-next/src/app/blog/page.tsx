@@ -4,6 +4,8 @@ function BlogPage() {
   return (
     <div>
       <PostCard/>
+      <PostCard/>
+      <PostCard/>
       
       
 
