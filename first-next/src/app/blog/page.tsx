@@ -1,16 +1,15 @@
-import React from 'react'
-import PostCard from '@/components/PostCard/PostCard'
+import React from "react";
+import PostCard from "@/components/PostCard/PostCard";
 function BlogPage() {
   return (
-    <div>
-      <PostCard/>
-      <PostCard/>
-      <PostCard/>
+    <div className="flex flex-wrap">
+      <PostCard />
+      <PostCard />
+      <PostCard />
       
-      
-
+     
     </div>
-  )
+  );
 }
 
-export default BlogPage
+export default BlogPage;

@@ -1,4 +1,4 @@
-"use client";
+                    "use client";
 
 import React, { use } from "react";
 import CustomLinks from "@/components/CustomLinks";
@@ -12,7 +12,7 @@ const links = [
   { title: "Contact", path: "/contact" },
   { title: "Blog", path: "/blog" },
 ];
-
+   
 function Navbar() {
   const pathname = usePathname();
   // We can use this to check if the user is an admin or if the user is logged in
