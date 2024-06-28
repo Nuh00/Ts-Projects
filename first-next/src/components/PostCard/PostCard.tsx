@@ -37,7 +37,7 @@ function PostCard({ date, title, description, image, link}: PostCardProps) {
           <span className=" rotate-[270deg]">{date} </span>
         </div>
       </div>
-      <div>
+      <div className="flex flex-col gap-3">
         <h1 className="text-2xl font-bold">{title}</h1>
         <p className=" text-header-gray">{description}</p>
         <Link href={link} className="text-white text-l  underline">Read more</Link>
