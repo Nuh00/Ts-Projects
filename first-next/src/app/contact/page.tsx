@@ -4,9 +4,9 @@ import React from "react";
 
 function Contanct() {
   return (
-    <main className="flex items-center gap-24">
+    <main className="flex flex-col md:flex-row  items-center gap-24 px-3">
       <div className="flex-1 relative">
-        <Image src="/contact.png" alt="" width={500} height={500} className=" object-contain" />
+        <Image src="/contact.png" alt="" width={500} height={500} className=" object-contain mx-auto  flex-shrink-0"  />
       </div>
       <div className="flex-1">
         <form action="" className="flex flex-col gap-4">
