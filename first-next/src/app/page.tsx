@@ -1,7 +1,23 @@
+"use client";
+
 import CustomLinks from "@/components/CustomLinks";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+
 
 export default function Home() {
+  {
+    /* This is for Client Side Rendering */
+  }
+  const router = useRouter();
+
+  const handleclick = () => {
+    console.log("clicked");
+    router.back(); // goes to the last visited page in the history stack
+  };
+  {
+    /* This is for Client Side Rendering */
+  }
   return (
     <main className="grid md:grid-cols-2 grid-cols-1 ">
       <div className="flex flex-col md:items-start items-center">
@@ -14,8 +30,18 @@ export default function Home() {
         </p>
 
         <div className="flex gap-4">
-          <CustomLinks href="/contact"  intent="sky" >Learn More </CustomLinks>
-          <CustomLinks href="/contact" className="bg-white text-black">Contact Us</CustomLinks>
+          <CustomLinks href="/contact" intent="sky">
+            Learn More{" "}
+          </CustomLinks>
+          <CustomLinks href="/contact" className="bg-white text-black">
+            Contact Us
+          </CustomLinks>
+          <button
+            className=" bg-green-400 px-3 rounded-md"
+            onClick={handleclick}
+          >
+            Click Me
+          </button>
         </div>
         <Image
           src="/brands.png"

@@ -1,4 +1,4 @@
-                    "use client";
+"use client";
 
 import React, { use } from "react";
 import CustomLinks from "@/components/CustomLinks";
@@ -12,30 +12,28 @@ const links = [
   { title: "Contact", path: "/contact" },
   { title: "Blog", path: "/blog" },
 ];
-   
+
 function Navbar() {
   const pathname = usePathname();
-  // We can use this to check if the user is an admin or if the user is logged in
+  // usePathname gives you the pathname for example, console.log(pathname) will ne "/contact"
 
   const [clicked, setClicked] = useState(false);
   const session = true;
   const isAdmin = true;
 
   useEffect(() => {
-
-    const hideMenu = () =>{
-      if(window.innerWidth > 768 && clicked){
-        setClicked(false)
+    const hideMenu = () => {
+      if (window.innerWidth > 768 && clicked) {
+        setClicked(false);
       }
     };
 
-    window.addEventListener('resize', hideMenu)
+    window.addEventListener("resize", hideMenu);
 
     return () => {
-      window.removeEventListener('resize', hideMenu)
-    }
-
-  },[clicked])
+      window.removeEventListener("resize", hideMenu);
+    };
+  }, [clicked]);
 
   return (
     <div className="flex justify-between items-center text-center h-24 px-4">
