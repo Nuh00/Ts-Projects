@@ -1,15 +1,26 @@
-
 import React from "react";
 import Image from "next/image";
 
-type paramProps = {
-  params:{
-    slug:string
+const getData = async (slug: string) => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
+  // If you know that your fetched data will not constantly change, you can keep it as force-cache.
+  // And if you know that your fetched data will constantly change, you can set cache to "no-cache".
+  if (!res.ok) {
+    throw new Error("Something went wrong");
   }
-}
+  return res.json();
+};
 
-function SinglePostPage({params}:paramProps) {
-  console.log(params)
+type paramProps = {
+  params: {
+    slug: string;
+  };
+};
+
+async function SinglePostPage({ params }: paramProps) {
+  const { slug } = params;
+
+  const post = await getData(slug);
   return (
     <div className=" flex gap-10 px-4 justify-start">
       <div className="hidden md:flex  relative h-[700px] w-[350px] ">
@@ -22,7 +33,7 @@ function SinglePostPage({params}:paramProps) {
       </div>
 
       <div className="flex flex-col gap-6 md:justify-start justify-center">
-        <h1 className="text-6xl font-semibold ">Title</h1>
+        <h1 className="text-6xl font-semibold ">{post.title}</h1>
         <div className="flex gap-3">
           <div className="relative rounded-full w-12 h-12 overflow-hidden">
             <Image
@@ -42,10 +53,7 @@ function SinglePostPage({params}:paramProps) {
           </div>
         </div>
         <div className="px-3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-          perferendis optio deleniti quas ipsa qui. Quae facere exercitationem
-          possimus neque. Sed animi quidem vel ipsam optio, unde possimus
-          provident doloribus!
+          {post.body}
         </div>
       </div>
     </div>
