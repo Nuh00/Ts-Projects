@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import PostUser from "@/components/postUser/postUser";
 import { Suspense } from "react";
-import { getUser } from "@/lib/data";
+import { getUser } from "../../../../lib/data";
 
 // const getData = async (slug: string) => {
 //   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);

@@ -1,4 +1,4 @@
-import { getUser } from "@/lib/data";
+import { getUser } from "../../../lib/data";
 import React from "react";
 
 // FETCHING WITH A API FUNCTION
@@ -16,8 +16,8 @@ import React from "react";
 // };
 
 type userProps = {
-    userNum: number;
-    };
+  userNum: number;
+};
 
 async function PostUser({ userNum }: userProps) {
   const user = await getUser(userNum);
@@ -25,7 +25,7 @@ async function PostUser({ userNum }: userProps) {
     <div>
       <>
         <p className=" text-gray-400">Author</p>
-        <p>{ user && user.name}</p>
+        <p>{user && user.name}</p>
       </>
     </div>
   );

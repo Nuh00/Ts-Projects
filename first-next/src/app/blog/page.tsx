@@ -1,6 +1,6 @@
 import React from "react";
 import PostCard from "@/components/postCard/PostCard";
-import { getPosts } from "@/lib/data";
+import { getPosts } from "../../../lib/data";
 
 interface Post {
   id: number;
