@@ -3,9 +3,11 @@ import PostCard from "@/components/postCard/PostCard";
 import { getPosts } from "../../../lib/data";
 
 interface Post {
-  id: number;
+  userID: string;
   title: string;
-  body: string;
+  desc: string;
+  img: string;
+  slug: string;
 }
 
 // WITH FETCH API
@@ -26,12 +28,12 @@ async function BlogPage() {
     <div className="flex flex-wrap justify-center gap-4">
       {posts.map((post: Post) => (
         <PostCard
-          key={post.id}
-          image="https://images.pexels.com/photos/23848646/pexels-photo-23848646/free-photo-of-a-stone-bridge-over-a-small-stream-in-the-mountains.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=loading"
+          key={post.userID}
+          image={post.img}
           date="01.01.2024"
           title={post.title}
-          description={post.body}
-          link={`/blog/${post.id}`}
+          description={post.desc}
+          link={`/blog/${post.slug}`}
         ></PostCard>
       ))}
     </div>

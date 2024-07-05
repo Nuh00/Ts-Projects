@@ -1,46 +1,48 @@
 // TEMPORARY_DATA
-const users = [
-  {
-    id: 1,
-    name: "Alice",
-    body: "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
-  },
-  {
-    id: 2,
-    name: "Bob",
-    body: "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
-  },
-  {
-    id: 3,
-    name: "Charlie",
-    body: "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
-  },
-];
+import { Post, User } from "./models.js";
+import { connectToDB } from "./utils.js";
 
-const posts = [
-  { id: 1, title: "Hello, World!", body: "This is the first post on our blog" },
-  {
-    id: 2,
-    title: "My favorite things",
-    body: "This is the second post on our blog",
-  },
-  { id: 3, title: "How to code", body: "This is the third post on our blog" },
-];
 
 export const getPosts = async () => {
-  return posts;
+  try {
+    connectToDB();
+    const posts = await Post.find();
+    return posts;
+  } catch (error) {
+    console.log(error);
+    throw new Error(error);
+  }
 };
 
-export const getPost = async (id) => {
-  const post =  posts.find((post) => post.id === parseInt(id));
-  return post;
+export const getPost = async (slug) => {
+  try {
+    connectToDB();
+    const post = await Post.findOne({slug: slug});
+    return post;
+  } catch (error) {
+    console.log(error);
+    throw new Error(error);
+  }
 };
 
 export const getUsers = async () => {
-  return users;
+  try {
+    connectToDB();
+    const users = await User.find();
+    return users;
+  } catch (error) {
+    console.log(error);
+    throw new Error(error);
+  }
 };
 
 export const getUser = async (id) => {
-  const user = users.find((user) => user.id === parseInt(id));
+  try {
+    connectToDB();
+    const user = await User.findById(id);
     return user;
+  } catch (error) {
+    console.log(error);
+    throw new Error(error);
+  }
 };
