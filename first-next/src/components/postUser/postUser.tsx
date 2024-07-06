@@ -25,7 +25,7 @@ async function PostUser({ userNum }: userProps) {
     <div>
       <>
         <p className=" text-gray-400">Author</p>
-        <p>{user && user.name}</p>
+        <p>{user && user.username}</p>
       </>
     </div>
   );

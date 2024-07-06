@@ -25,22 +25,18 @@ function PostCard({ date, title, description, image, link}: PostCardProps) {
     <div className="flex flex-col gap-4 mb-20 w-[400px] ">
       <div className="flex">
         <div className="relative w-[90%] h-[400px]">
-          <Image
-            src={image}
-            alt=""
-            layout="fill"
-            objectFit="cover"
-            
-          ></Image>
+          <Image src={image} alt="" layout="fill" objectFit="cover"></Image>
         </div>
-        <div className=" flex items-center text-sm">
+        <div className=" flex items-center text-sm whitespace-nowrap">
           <span className=" rotate-[270deg]">{date} </span>
         </div>
       </div>
       <div className="flex flex-col gap-3">
         <h1 className="text-2xl font-bold">{title}</h1>
         <p className=" text-header-gray">{description}</p>
-        <Link href={link} className="text-white text-l  underline">Read more</Link>
+        <Link href={link} className="text-white text-l  underline">
+          Read more
+        </Link>
       </div>
     </div>
   );

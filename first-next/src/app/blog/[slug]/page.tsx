@@ -46,12 +46,12 @@ async function SinglePostPage({ params }: paramProps) {
               objectFit="cover"
             />
           </div>
-          {/* <Suspense fallback={<div>Please wait...</div>}>
-            {post && <PostUser userNum={post.id} />}
-          </Suspense> */}
+          <Suspense fallback={<div>Please wait...</div>}>
+            {post && <PostUser userNum={post.userID} />}
+          </Suspense>
           <div>
             <p className="text-gray-400">Published</p>
-            <p>01.01.2024</p>
+            <p>{post.createdAt.toString().slice(4,16)}</p>
           </div>
         </div>
         <div className="px-3">{post && post.body}</div>

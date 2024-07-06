@@ -8,6 +8,7 @@ interface Post {
   desc: string;
   img: string;
   slug: string;
+  createdAt: string;
 }
 
 // WITH FETCH API
@@ -30,7 +31,7 @@ async function BlogPage() {
         <PostCard
           key={post.userID}
           image={post.img}
-          date="01.01.2024"
+          date={post.createdAt.toString().slice(4,16)}
           title={post.title}
           description={post.desc}
           link={`/blog/${post.slug}`}
