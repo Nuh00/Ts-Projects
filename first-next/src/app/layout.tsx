@@ -19,15 +19,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="relative">
-          <div className="max-w-[1536px] mx-auto min-h-screen flex flex-col justify-between">
+        <main className="relative">
+          <div className="max-w-[1536px] mx-auto min-h-screen ">
             <Navbar />
             {children}
             <div className="mt-6">
               <Footer />
             </div>
           </div>
-        </div>
+        </main>
       </body>
     </html>
   );

@@ -4,7 +4,6 @@ import CustomLinks from "@/components/CustomLinks";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-
 export default function Home() {
   {
     /* This is for Client Side Rendering */
