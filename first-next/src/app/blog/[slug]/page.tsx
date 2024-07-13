@@ -3,6 +3,16 @@ import Image from "next/image";
 import PostUser from "@/components/postUser/postUser";
 import { Suspense } from "react";
 import { getPost, getUser } from "../../../../lib/data";
+import { Metadata } from "next";
+
+export const generateMetadata = async ({ params }) => {
+  const { slug } = params;
+  const post = await getPost(slug);
+  return {
+    title: post.title,
+    description: post.desc,
+  };
+};
 
 // const getData = async (slug: string) => {
 //   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
@@ -51,7 +61,7 @@ async function SinglePostPage({ params }: paramProps) {
           </Suspense>
           <div>
             <p className="text-gray-400">Published</p>
-            <p>{post.createdAt.toString().slice(4,16)}</p>
+            <p>{post.createdAt.toString().slice(4, 16)}</p>
           </div>
         </div>
         <div className="px-3">{post && post.body}</div>

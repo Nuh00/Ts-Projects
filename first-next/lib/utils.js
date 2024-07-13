@@ -1,5 +1,7 @@
 import mongoose, { connection } from "mongoose";
 
+// This is us conencting to the mongoDB
+
 export const connectToDB = async () => {
   const conenction = {};
 
